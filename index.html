@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Coordinate Calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+                <span class="glyphicon glyphicon-tree-deciduous"></span> Coordinate Calculator
+          </a>
+        </div>
+      </div>
+    </nav>
+  
+  <div class="custom-container container">
+
+  <!-- START OF DMS to DD -->
+
+  	<div class="panel panel-primary">
+    	<div class="panel-heading"><strong>Convert DMS to DD</strong></div>
+    	<br/>
+    	<form class="form-horizontal">
+
+    		<div class="form-group has-feedback">
+    			<label for="degree" class="col-md-2 control-label">Degree</label>
+    			<div class="col-md-2">
+              <div class="input-group">
+      				  <input type="number" id="degree1" class="form-control" placeholder="degree">
+                <div class="input-group-addon">&#x25CB;</div>
+              </div>
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    			<label for="minute" class="col-md-2 control-label">Minute</label>
+    			<div class="col-md-2">
+            <div class="input-group">
+    				  <input type="number" id="minute1" class="form-control" placeholder="minute">
+              <div class="input-group-addon">'</div>
+            </div>
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+    			<label for="second" class="col-md-2 control-label">Second</label>
+    			<div class="col-md-2">
+            <div class="input-group">
+    				  <input type="number" id="second1" class="form-control" placeholder="second">
+              <div class="input-group-addon">"</div>
+            </div>
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+  		    <div class="col-sm-offset-2 col-sm-10">
+  		      <button type="button" class="btn btn-primary dmstodd">Convert</button>
+  		      <button type="reset" class="btn btn-default">Reset</button>
+  		    </div>
+  		</div>
+
+  		<hr/>
+
+  		<div class="form-group">
+    			<label for="result" class="col-md-2 control-label">Decimal Degree</label>
+    			<div class="col-md-2">
+            <div class="input-group">
+    				  <input type="number" id="result1" class="form-control" placeholder="result" disabled="true">
+              <div class="input-group-addon">&#x25CB;</div>
+            </div>
+    			</div>
+    	</div>
+
+    	</form>
+  	</div>
+
+    <!-- END OF DMS to DD -->
+
+    <hr/>
+
+    <!-- START OF DD to DMS -->
+
+    <div class="panel panel-success">
+      <div class="panel-heading"><strong>Convert DD to DMS</strong></div>
+      <br/>
+      <form class="form-horizontal">
+
+        <div class="form-group">
+          <label for="degree" class="col-md-2 control-label">Decimal Degree</label>
+          <div class="col-md-2">
+            <div class="input-group">
+              <input type="number" id="degree2" class="form-control" placeholder="degree">
+              <div class="input-group-addon">&#x25CB;</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success ddtodms">Convert</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+          </div>
+      </div>
+      </form>
+
+      <hr/>
+
+      <form class="form-inline">
+      <div class="col-md-2"></div>
+      
+      <div class="form-group">
+        <label class="sr-only" for="degree">D</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="resultD" placeholder="Degree" disabled="true">
+          <div class="input-group-addon">&#x25CB;</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only" for="minute">M</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="resultM" placeholder="Minute" disabled="true">
+          <div class="input-group-addon">'</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only" for="second">S</label>
+        <div class="input-group">
+          <input type="number" class="form-control" id="resultS" placeholder="Second" disabled="true">
+          <div class="input-group-addon">"</div>
+        </div>
+      </div>
+      </form>
+
+      <br/>
+    </div>
+
+    <!-- END OF DD to DMS -->
+
+    <hr/>
+    
+    <!-- START OF CALCULATE -->
+
+    <div class="panel panel-danger">
+      <div class="panel-heading"><strong>Calculate the Time Difference</strong></div>
+      <br/>
+      <form class="form-horizontal">
+
+        <div class="form-group">
+          <label for="localTime" class="col-md-2 control-label">Local Time</label>
+          <div class="col-md-3">
+            <div class="input-group">
+              <input type="text" id="localtime" class="form-control" placeholder="hh:mm">
+              <div class="input-group-addon">hh:mm</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="localLong" class="col-md-2 control-label">Local Longitude</label>
+          <div class="col-md-3">
+            <div class="input-group">
+              <input type="number" id="localLong" class="form-control" placeholder="longitude">
+              <div class="input-group-addon">longitude</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="destLong" class="col-md-2 control-label">Destination Longitude</label>
+          <div class="col-md-3">
+            <div class="input-group">
+              <input type="number" id="destLong" class="form-control" placeholder="longitude">
+              <div class="input-group-addon">longitude</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-danger convertTime">Calculate</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+          </div>
+        </div>
+      
+      <hr/>
+
+      <div class="form-group">
+          <label for="diffTime" class="col-md-2 control-label">Different Time</label>
+          <div class="col-md-3">
+            <input type="text" id="diffTime" class="form-control" placeholder="Different Time" disabled="true">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="resultTime" class="col-md-2 control-label">Time at Destination</label>
+          <div class="col-md-3">
+            <input type="text" id="resultTime" class="form-control" placeholder="resultTime" disabled="true">
+          </div>
+      </div>
+      
+      </form>
+    </div>
+
+    <!-- END OF CALCULATE -->
+
+    <br/>
+    <br/>
+
+  </div> <!-- END OF CONTAINER -->
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">Finsa Nurpandi @2017</p>
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Custom js, this is what magic happend -->
+    <script src="js/converter.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
